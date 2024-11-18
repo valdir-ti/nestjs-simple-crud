@@ -6,9 +6,21 @@ GET http://localhost:3000/developers/3
 
 ### create developer
 POST http://localhost:3000/developers
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@mail.com",
+    "dateOfBirth": "1990-01-01"
+}
 
 ### update developer
 PATCH http://localhost:3000/developers/2
+Content-Type: application/json
+
+{
+    "email": "johndoe@mail.com"
+}
 
 ### delete developer
 DELETE http://localhost:3000/developers/3
