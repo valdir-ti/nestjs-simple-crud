@@ -1,0 +1,29 @@
+### list users
+GET http://localhost:3000/v1/users
+
+### get user
+GET http://localhost:3000/v1/users/LtmEyh1S1xjX7CQsBBu3_
+
+### create user
+POST http://localhost:3000/v1/users
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@mail.com",
+    "password": "rewr2344231rwer34",
+    "dateOfBirth": "1990-01-01",
+    "role": "root",
+    "createdAt": "2024-11-19"
+}
+
+### update user
+PATCH http://localhost:3000/v1/users/LtmEyh1S1xjX7CQsBBu3_
+Content-Type: application/json
+
+{
+    "name": "Jhon Doe edited"
+}
+
+### delete user
+DELETE http://localhost:3000/v1/users/LtmEyh1S1xjX7CQsBBu3_

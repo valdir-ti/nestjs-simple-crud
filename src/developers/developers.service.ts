@@ -1,9 +1,11 @@
+import { InjectRepository } from '@nestjs/typeorm';
 import { HttpException, Injectable } from '@nestjs/common';
+
+import { Repository } from 'typeorm';
+
+import { Developer } from './entities/developer.entity';
 import { CreateDeveloperDto } from './dto/create-developer.dto';
 import { UpdateDeveloperDto } from './dto/update-developer.dto';
-import { Repository } from 'typeorm';
-import { Developer } from './entities/developer.entity';
-import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class DevelopersService {
@@ -17,7 +19,8 @@ export class DevelopersService {
     if (existingDeveloper) {
       throw new HttpException('Email already in use', 409);
     }
-    return this.create(dto);
+    const developer = this.repository.create(dto);
+    return this.repository.save(developer);
   }
 
   findAll() {
