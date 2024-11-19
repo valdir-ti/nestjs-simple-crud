@@ -18,7 +18,7 @@ export class DevelopersController {
   constructor(private readonly developersService: DevelopersService) {}
 
   @Post()
-  create(@Body() createDeveloperDto: CreateDeveloperDto) {
+  async create(@Body() createDeveloperDto: CreateDeveloperDto) {
     return this.developersService.create(createDeveloperDto);
   }
 

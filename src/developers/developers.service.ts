@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { CreateDeveloperDto } from './dto/create-developer.dto';
 import { UpdateDeveloperDto } from './dto/update-developer.dto';
 import { Repository } from 'typeorm';
@@ -12,9 +12,12 @@ export class DevelopersService {
     private readonly repository: Repository<Developer>,
   ) {}
 
-  create(dto: CreateDeveloperDto) {
-    const developer = this.repository.create(dto);
-    return this.repository.save(developer);
+  async create(dto: CreateDeveloperDto) {
+    const existingDeveloper = await this.findByEmail(dto.email);
+    if (existingDeveloper) {
+      throw new HttpException('Email already in use', 409);
+    }
+    return this.create(dto);
   }
 
   findAll() {
@@ -23,6 +26,10 @@ export class DevelopersService {
 
   findOne(id: string) {
     return this.repository.findOneBy({ id });
+  }
+
+  findByEmail(email: string) {
+    return this.repository.findOneBy({ email });
   }
 
   async update(id: string, dto: UpdateDeveloperDto) {

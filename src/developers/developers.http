@@ -2,7 +2,7 @@
 GET http://localhost:3000/developers
 
 ### get developer
-GET http://localhost:3000/developers/dev_aHspvfx6U2erkRGenLuMJ
+GET http://localhost:3000/developers/dev_--lbhIp8FO_eu25v2aRoS
 
 ### create developer
 POST http://localhost:3000/developers
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "name": "John Doe",
-    "email": "john@mail.com",
+    "email": "johndoe@mail.com",
     "dateOfBirth": "1990-01-01"
 }
 
@@ -23,5 +23,5 @@ Content-Type: application/json
 }
 
 ### delete developer
-DELETE http://localhost:3000/developers/dev_aHspvfx6U2erkRGenLuMJ
+DELETE http://localhost:3000/developers/dev_StphyIsHuGbWcBQ3S8Shb
 
