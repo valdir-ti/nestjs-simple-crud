@@ -1,11 +1,11 @@
 ### list developers
-GET http://localhost:3000/developers
+GET http://localhost:3000/v1/developers
 
 ### get developer
-GET http://localhost:3000/developers/dev_--lbhIp8FO_eu25v2aRoS
+GET http://localhost:3000/v1/developers/dev_--lbhIp8FO_eu25v2aRoS
 
 ### create developer
-POST http://localhost:3000/developers
+POST http://localhost:3000/v1/developers
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### update developer
-PATCH http://localhost:3000/developers/dev_IGXrlL-APqda-nk8MXUEj
+PATCH http://localhost:3000/v1/developers/dev_IGXrlL-APqda-nk8MXUEj
 Content-Type: application/json
 
 {
@@ -23,5 +23,5 @@ Content-Type: application/json
 }
 
 ### delete developer
-DELETE http://localhost:3000/developers/dev_StphyIsHuGbWcBQ3S8Shb
+DELETE http://localhost:3000/v1/developers/dev_StphyIsHuGbWcBQ3S8Shb
 
