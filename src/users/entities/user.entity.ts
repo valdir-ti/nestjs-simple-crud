@@ -37,6 +37,6 @@ export class User {
 
   @BeforeInsert()
   generateId() {
-    this.id = nanoid();
+    this.id = `user_${nanoid()}`;
   }
 }

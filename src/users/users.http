@@ -2,7 +2,7 @@
 GET http://localhost:3000/v1/users
 
 ### get user
-GET http://localhost:3000/v1/users/LtmEyh1S1xjX7CQsBBu3_
+GET http://localhost:3000/v1/users/ieRQARZvvmL3vR-L14SbS
 
 ### create user
 POST http://localhost:3000/v1/users
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "name": "John Doe",
-    "email": "johndoe@mail.com",
+    "email": "john@mail.com",
     "password": "rewr2344231rwer34",
     "dateOfBirth": "1990-01-01",
     "role": "root",
